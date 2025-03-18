@@ -69,7 +69,7 @@ const ParticlesBackground = ({ type = 'default' }: ParticlesBackgroundProps) => 
             }
           },
           interactivity: {
-            detectsOn: "canvas",
+            detectsOn: "canvas" as const,
             events: {
               onHover: {
                 enable: true,
@@ -158,7 +158,7 @@ const ParticlesBackground = ({ type = 'default' }: ParticlesBackgroundProps) => 
             }
           },
           interactivity: {
-            detectsOn: "canvas",
+            detectsOn: "canvas" as const,
             events: {
               onHover: {
                 enable: true,
@@ -252,7 +252,7 @@ const ParticlesBackground = ({ type = 'default' }: ParticlesBackgroundProps) => 
             }
           },
           interactivity: {
-            detectsOn: "canvas",
+            detectsOn: "canvas" as const,
             events: {
               onHover: {
                 enable: true,
