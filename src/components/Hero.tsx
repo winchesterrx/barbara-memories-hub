@@ -1,6 +1,6 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Cake, Gift, Sparkles } from 'lucide-react';
 
 interface HeroProps {
   title: string;
@@ -74,6 +74,11 @@ const Hero = ({ title, subtitle, quote, backgroundImage }: HeroProps) => {
     ));
   };
 
+  const today = new Date();
+  const isBirthdayMonth = today.getMonth() === 2; // March is month 2 (0-indexed)
+  const isBirthdayDay = today.getDate() === 19;
+  const isBirthday = isBirthdayMonth && isBirthdayDay;
+
   return (
     <div 
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
@@ -85,6 +90,62 @@ const Hero = ({ title, subtitle, quote, backgroundImage }: HeroProps) => {
     >
       <div className="absolute inset-0 bg-gradient-to-t from-netflix-black via-netflix-black/60 to-netflix-black/40"></div>
       <div className="absolute inset-0 bg-[url('/romantic-texture.png')] opacity-20 mix-blend-overlay"></div>
+      
+      {/* Birthday decorations that only show on the actual birthday */}
+      {isBirthday && (
+        <>
+          <motion.div 
+            className="absolute top-20 left-10"
+            animate={{ 
+              y: [0, -10, 0],
+              rotate: [0, 10, 0, -10, 0]
+            }}
+            transition={{ 
+              repeat: Infinity,
+              duration: 3
+            }}
+          >
+            <Cake className="text-romantic-pink" size={40} />
+          </motion.div>
+          
+          <motion.div 
+            className="absolute bottom-40 right-10"
+            animate={{ 
+              y: [0, -8, 0],
+              rotate: [0, -5, 0, 5, 0]
+            }}
+            transition={{ 
+              repeat: Infinity,
+              duration: 2.5,
+              delay: 0.5
+            }}
+          >
+            <Gift className="text-netflix-red" size={36} />
+          </motion.div>
+          
+          {Array.from({ length: 8 }).map((_, i) => (
+            <motion.div
+              key={`sparkle-hero-${i}`}
+              className="absolute text-yellow-300"
+              style={{
+                top: `${10 + Math.random() * 80}%`,
+                left: `${10 + Math.random() * 80}%`,
+              }}
+              animate={{ 
+                opacity: [0.3, 1, 0.3],
+                scale: [0.8, 1.2, 0.8]
+              }}
+              transition={{ 
+                repeat: Infinity,
+                duration: 2 + Math.random() * 2,
+                delay: Math.random() * 2
+              }}
+            >
+              <Sparkles size={16 + Math.random() * 10} />
+            </motion.div>
+          ))}
+        </>
+      )}
       
       <motion.div 
         className="container mx-auto px-4 z-10 text-center"
@@ -147,7 +208,7 @@ const Hero = ({ title, subtitle, quote, backgroundImage }: HeroProps) => {
           variants={buttonVariants}
         >
           <motion.button 
-            className="netflix-button text-lg px-8 py-4 rounded-full bg-netflix-red shadow-lg relative overflow-hidden group"
+            className={`netflix-button text-lg px-8 py-4 rounded-full bg-netflix-red shadow-lg relative overflow-hidden group ${isBirthday ? 'birthday-box-glow' : ''}`}
             whileHover="hover"
             whileTap="tap"
             onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
@@ -161,6 +222,28 @@ const Hero = ({ title, subtitle, quote, backgroundImage }: HeroProps) => {
             />
           </motion.button>
         </motion.div>
+        
+        {isBirthday && (
+          <motion.div
+            className="mt-6 text-romantic-pink birthday-text-glow"
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1.5, type: "spring" }}
+          >
+            <motion.span
+              className="inline-block text-lg font-romantic"
+              animate={{ 
+                scale: [1, 1.1, 1],
+              }}
+              transition={{ 
+                repeat: Infinity,
+                duration: 2
+              }}
+            >
+              ✨ Feliz Aniversário! ✨
+            </motion.span>
+          </motion.div>
+        )}
       </motion.div>
       
       <motion.div 

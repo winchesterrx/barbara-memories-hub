@@ -19,14 +19,14 @@ const ParticlesBackground = ({ type = 'default' }: ParticlesBackgroundProps) => 
         return {
           particles: {
             number: {
-              value: 20,
+              value: 30,  // Increased number of hearts
               density: {
                 enable: true,
                 value_area: 800
               }
             },
             color: {
-              value: "#FF758F"
+              value: ["#FF758F", "#FF1744", "#FF8A80", "#FFB3C1"]  // Multiple heart colors
             },
             shape: {
               type: "heart",
@@ -36,7 +36,7 @@ const ParticlesBackground = ({ type = 'default' }: ParticlesBackgroundProps) => 
               },
             },
             opacity: {
-              value: 0.5,
+              value: 0.6,  // Increased opacity
               random: true,
               anim: {
                 enable: true,
@@ -46,12 +46,12 @@ const ParticlesBackground = ({ type = 'default' }: ParticlesBackgroundProps) => 
               }
             },
             size: {
-              value: 10,
+              value: 15,  // Larger hearts
               random: true,
               anim: {
                 enable: true,
                 speed: 5,
-                size_min: 1,
+                size_min: 3,
                 sync: false
               }
             },
@@ -60,12 +60,17 @@ const ParticlesBackground = ({ type = 'default' }: ParticlesBackgroundProps) => 
             },
             move: {
               enable: true,
-              speed: 1.5,
+              speed: 2,  // Slightly faster
               direction: "top" as const,
               random: true,
               straight: false,
               out_mode: "out" as const,
               bounce: false,
+              attract: {
+                enable: true,
+                rotateX: 600,
+                rotateY: 1200
+              }
             }
           },
           interactivity: {
@@ -84,9 +89,9 @@ const ParticlesBackground = ({ type = 'default' }: ParticlesBackgroundProps) => 
             modes: {
               bubble: {
                 distance: 250,
-                size: 12,
+                size: 18,  // Larger on hover
                 duration: 2,
-                opacity: 0.8,
+                opacity: 1,  // More visible on hover
                 speed: 3
               },
               repulse: {
@@ -108,24 +113,27 @@ const ParticlesBackground = ({ type = 'default' }: ParticlesBackgroundProps) => 
         return {
           particles: {
             number: {
-              value: 100,
+              value: 120,  // More confetti particles
               density: {
                 enable: true,
                 value_area: 800
               }
             },
             color: {
-              value: ["#FF758F", "#FFB3C1", "#FFC2D1", "#E50914", "#FF8FA3"]
+              value: ["#FF758F", "#FFB3C1", "#FFC2D1", "#E50914", "#FF8FA3", "#FFC107", "#4CAF50", "#2196F3", "#9C27B0"] // Birthday colors
             },
             shape: {
-              type: "circle",
+              type: ["circle", "square", "triangle", "star", "polygon"],  // Various confetti shapes
               stroke: {
                 width: 0,
                 color: "#000000"
+              },
+              polygon: {
+                nb_sides: 5
               }
             },
             opacity: {
-              value: 0.5,
+              value: 0.7,  // More visible
               random: true,
               anim: {
                 enable: false,
@@ -135,12 +143,12 @@ const ParticlesBackground = ({ type = 'default' }: ParticlesBackgroundProps) => 
               }
             },
             size: {
-              value: 6,
+              value: 8,  // Slightly larger
               random: true,
               anim: {
                 enable: false,
                 speed: 40,
-                size_min: 0.1,
+                size_min: 1,
                 sync: false
               }
             },
@@ -149,12 +157,17 @@ const ParticlesBackground = ({ type = 'default' }: ParticlesBackgroundProps) => 
             },
             move: {
               enable: true,
-              speed: 3,
+              speed: 4,  // Faster falling
               direction: "bottom" as const,
               random: true,
               straight: false,
               out_mode: "out" as const,
-              bounce: false
+              bounce: false,
+              attract: {
+                enable: false,
+                rotateX: 600,
+                rotateY: 1200
+              }
             }
           },
           interactivity: {
@@ -176,7 +189,7 @@ const ParticlesBackground = ({ type = 'default' }: ParticlesBackgroundProps) => 
                 duration: 0.4
               },
               push: {
-                particles_nb: 4
+                particles_nb: 6  // More particles on click
               }
             }
           },
