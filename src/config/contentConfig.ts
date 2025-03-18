@@ -38,16 +38,16 @@ export const siteConfig = {
   // Quotes to display
   quotes: [
     {
-      text: "O tempo que passamos juntos é o tesouro mais precioso que tenho.",
-      author: "Seu Amor"
+      text: " O tempo que passamos juntos é a bem mais precioso que eu tenho na minha vida!",
+      author: "Gabriel"
     },
     {
-      text: "Nosso amor é como um filme onde cada cena é mais linda que a anterior.",
-      author: "Seu Amor"
+      text: "Você é incrivel, continue assim. Sua felicidade também é a minha",
+      author: "Gabriel"
     },
     {
       text: "Feliz aniversário para a mulher que ilumina todos os meus dias.",
-      author: "Seu Amor"
+      author: "Gabriel"
     }
   ],
   
@@ -73,17 +73,17 @@ export const siteConfig = {
         },
         {
           id: 3,
-          imageSrc: "https://source.unsplash.com/random/600x900?couple,3",
-          title: "Nosso Primeiro Viagem",
-          date: "Março 2023",
-          description: "Aventuras inesquecíveis juntos explorando novos lugares."
+          imageSrc: "/img/skimonovo.jpg",
+          title: "Aquele primeiro 'Almoço' juntos",
+          date: "Primeira vez que saimos para almoçar juntos",
+          description: "Mesmo que o almoço tenha sido apenas um sorvetinho kk."
         },
         {
           id: 4,
-          imageSrc: "https://source.unsplash.com/random/600x900?couple,4",
-          title: "Piquenique no Parque",
-          date: "Abril 2023",
-          description: "Um dia perfeito com muitas risadas e amor."
+          imageSrc: "img/primeiravezvendoocav",
+          title: "Apoiando o cav juntos",
+          date: "Esse dia você foi pé frio kkk",
+          description: "Mesmo sendo pé frio, não troco sua companhia por nada"
         },
         {
           id: 5,
@@ -157,6 +157,6 @@ export const siteConfig = {
   // Birthday message
   birthdayMessage: {
     title: "Feliz Aniversário, Barbara!",
-    message: "19 de Março, um dia muito especial que trouxe ao mundo a pessoa mais incrível que já conheci. Que este novo ano de vida seja repleto de alegrias, conquistas e momentos maravilhosos. Te amo infinitamente!"
+    message: "19 de Março, um dia muito especial que trouxe ao mundo a pessoa mais incrível que já conheci. Que nessa nova fase da sua vida seja repleta de conquistas e momentos maravilhosos. Te amo muito!"
   }
 };
