@@ -1,7 +1,7 @@
 
 import React, { useCallback } from 'react';
 import Particles from 'react-tsparticles';
-import { loadFull } from 'tsparticles';
+import { loadSlim } from 'tsparticles-slim';
 import type { Engine } from 'tsparticles-engine';
 
 interface ParticlesBackgroundProps {
@@ -10,7 +10,7 @@ interface ParticlesBackgroundProps {
 
 const ParticlesBackground = ({ type = 'default' }: ParticlesBackgroundProps) => {
   const particlesInit = useCallback(async (engine: Engine) => {
-    await loadFull(engine);
+    await loadSlim(engine);
   }, []);
 
   const getOptions = () => {
@@ -69,13 +69,13 @@ const ParticlesBackground = ({ type = 'default' }: ParticlesBackgroundProps) => 
             }
           },
           interactivity: {
-            detect_on: "canvas",
+            detectsOn: "canvas",
             events: {
-              onhover: {
+              onHover: {
                 enable: true,
                 mode: "bubble"
               },
-              onclick: {
+              onClick: {
                 enable: true,
                 mode: "repulse"
               },
@@ -158,13 +158,13 @@ const ParticlesBackground = ({ type = 'default' }: ParticlesBackgroundProps) => 
             }
           },
           interactivity: {
-            detect_on: "canvas",
+            detectsOn: "canvas",
             events: {
-              onhover: {
+              onHover: {
                 enable: true,
                 mode: "repulse"
               },
-              onclick: {
+              onClick: {
                 enable: true,
                 mode: "push"
               },
@@ -252,13 +252,13 @@ const ParticlesBackground = ({ type = 'default' }: ParticlesBackgroundProps) => 
             }
           },
           interactivity: {
-            detect_on: "canvas",
+            detectsOn: "canvas",
             events: {
-              onhover: {
+              onHover: {
                 enable: true,
                 mode: "grab"
               },
-              onclick: {
+              onClick: {
                 enable: true,
                 mode: "push"
               },

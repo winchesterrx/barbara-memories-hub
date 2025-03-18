@@ -1,15 +1,15 @@
 
 import React from 'react';
 import { Heart } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
 const Footer = () => {
-  const heartVariants = {
+  const heartVariants: Variants = {
     hover: { 
       scale: 1.2,
       transition: { 
         repeat: Infinity, 
-        repeatType: "reverse", 
+        repeatType: "reverse" as const, 
         duration: 0.3 
       }
     }
