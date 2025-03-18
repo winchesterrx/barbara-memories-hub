@@ -80,7 +80,7 @@ export const siteConfig = {
         },
         {
           id: 4,
-          imageSrc: "img/primeiravezvendoocav",
+          imageSrc: "/img/cav.jpg",
           title: "Apoiando o cav juntos",
           date: "Esse dia você foi pé frio kkk",
           description: "Mesmo sendo pé frio, não troco sua companhia por nada"
