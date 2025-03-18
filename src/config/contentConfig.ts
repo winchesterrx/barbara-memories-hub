@@ -59,7 +59,7 @@ export const siteConfig = {
       memories: [
         {
           id: 1,
-          imageSrc: "https://source.unsplash.com/random/600x900?couple,1", // ⬅️ MUDE PARA SUA FOTO REAL
+          imageSrc: "/img/3.jpg", // ⬅️ MUDE PARA SUA FOTO REAL
           title: "Nosso Primeiro Encontro",
           date: "Janeiro 2023",
           description: "Aquele dia incrível que mudou nossas vidas para sempre."
