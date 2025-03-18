@@ -60,16 +60,16 @@ export const siteConfig = {
         {
           id: 1,
           imageSrc: "/img/3.jpg", // ⬅️ MUDE PARA SUA FOTO REAL
-          title: "Nosso Primeiro Encontro",
-          date: "Janeiro 2023",
+          title: "Nossa primeira ida ao parque",
+          date: "Pirmeira fotos juntos",
           description: "Aquele dia incrível que mudou nossas vidas para sempre."
         },
         {
           id: 2,
-          imageSrc: "https://source.unsplash.com/random/600x900?couple,2",
-          title: "Jantar Romântico",
-          date: "Fevereiro 2023",
-          description: "Uma noite inesquecível sob as estrelas."
+          imageSrc: "/img/pedidodenamoro.jpg",
+          title: "Pedido de Namoro",
+          date: "09/jun/2024",
+          description: "Esse dia foi especial, a primeira aliança a gente nunca esquece"
         },
         {
           id: 3,
