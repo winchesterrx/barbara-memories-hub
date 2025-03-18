@@ -11,8 +11,8 @@ export const siteConfig = {
   // Music player - ADICIONE SUAS MÚSICAS AQUI ⬇️
   music: {
     src: "/music/logoeu.mp3", // ⬅️ MUDE PARA O CAMINHO REAL DA SUA MÚSICA
-    title: "Nossa Música",
-    artist: "Artista Favorito",
+    title: "Toque aqui",
+    artist: "Jorge & Mateus",
     cover: "/music/cover.jpg", // ⬅️ MUDE PARA O CAMINHO DA IMAGEM DE CAPA DA MÚSICA
     autoPlay: true // Defina como false para desativar a reprodução automática
   },
