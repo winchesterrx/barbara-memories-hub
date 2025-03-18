@@ -76,7 +76,7 @@ const Index = () => {
             }}
             className="mb-8"
           >
-            <span className="text-6xl font-romantic text-romantic-pink">B</span>
+            <span className="text-6xl font-romantic text-romantic-pink animate-text-glow">B</span>
             <span className="text-6xl font-netflix text-netflix-red">ARBARAFLIX</span>
           </motion.div>
           <motion.div 
@@ -97,7 +97,7 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-netflix-black text-white overflow-x-hidden">
+    <div className="min-h-screen bg-netflix-black text-white overflow-x-hidden bg-[url('/romantic-texture.png')] bg-fixed bg-opacity-20">
       <ParticlesBackground type={particleType} />
       <Header />
       
@@ -123,6 +123,7 @@ const Index = () => {
                 delay: index * 0.2, 
                 duration: 0.5 
               }}
+              className="mb-16"
             >
               <PhotoCarousel 
                 title={category.title}
@@ -142,7 +143,7 @@ const Index = () => {
         title="Nossos Vídeos" 
         description="Reviva nossos momentos especiais através destes vídeos."
         id="videos"
-        className="bg-netflix-dark py-16"
+        className="bg-netflix-dark bg-opacity-80 py-16"
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {siteConfig.videos.map((video, index) => (
@@ -152,6 +153,7 @@ const Index = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2, duration: 0.5 }}
+              className="rounded-lg overflow-hidden shadow-lg hover:shadow-romantic-pink/20 transition-shadow"
             >
               <VideoPlayer 
                 videoSrc={video.videoSrc}
@@ -173,7 +175,7 @@ const Index = () => {
       >
         <div className="max-w-3xl mx-auto">
           <motion.h3 
-            className="text-2xl md:text-3xl font-romantic text-romantic-pink mb-6"
+            className="text-2xl md:text-3xl font-romantic text-romantic-pink mb-6 animate-text-glow"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -187,6 +189,7 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.5 }}
+            className="glass-card p-8 rounded-lg"
           >
             <p className="text-lg md:text-xl text-gray-300 mb-8">{siteConfig.birthdayMessage.message}</p>
           </motion.div>
@@ -228,6 +231,8 @@ const Index = () => {
         musicSrc={siteConfig.music.src}
         musicTitle={siteConfig.music.title}
         musicArtist={siteConfig.music.artist}
+        musicCover={siteConfig.music.cover}
+        autoPlay={siteConfig.music.autoPlay}
       />
     </div>
   );

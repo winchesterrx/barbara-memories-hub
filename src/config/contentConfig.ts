@@ -1,4 +1,3 @@
-
 // Edit this file to customize your content
 export const siteConfig = {
   // Hero Section
@@ -6,15 +5,35 @@ export const siteConfig = {
     title: "Barbara Gianezi",
     subtitle: "Nossa História de Amor",
     quote: "Cada momento ao seu lado é uma página especial na história da minha vida.",
-    backgroundImage: "https://source.unsplash.com/1600x900/?romantic,couple",
+    backgroundImage: "https://source.unsplash.com/1600x900/?romantic,couple", // ⬅️ MUDE ESTA URL para sua imagem de fundo
   },
   
-  // Music player
+  // Music player - ADICIONE SUAS MÚSICAS AQUI ⬇️
   music: {
-    src: "https://example.com/music/nossa-musica.mp3", // Replace with your music URL
+    src: "/music/nossa-musica.mp3", // ⬅️ MUDE PARA O CAMINHO REAL DA SUA MÚSICA
     title: "Nossa Música",
     artist: "Artista Favorito",
+    cover: "/music/cover.jpg", // ⬅️ MUDE PARA O CAMINHO DA IMAGEM DE CAPA DA MÚSICA
+    autoPlay: true // Defina como false para desativar a reprodução automática
   },
+  
+  // Lista de reprodução - ADICIONE MAIS MÚSICAS AQUI SE DESEJAR
+  playlist: [
+    {
+      id: 1,
+      src: "/music/musica1.mp3", // ⬅️ CAMINHO PARA MÚSICA 1
+      title: "Música Romântica 1",
+      artist: "Artista 1",
+      cover: "/music/cover1.jpg" // ⬅️ CAPA DA MÚSICA 1
+    },
+    {
+      id: 2,
+      src: "/music/musica2.mp3", // ⬅️ CAMINHO PARA MÚSICA 2
+      title: "Música Romântica 2",
+      artist: "Artista 2",
+      cover: "/music/cover2.jpg" // ⬅️ CAPA DA MÚSICA 2
+    }
+  ],
   
   // Quotes to display
   quotes: [
@@ -33,13 +52,14 @@ export const siteConfig = {
   ],
   
   // Photo memories - each category creates a carousel
+  // ADICIONE SUAS FOTOS AQUI ⬇️ 
   photoCategories: [
     {
       title: "Nossos Momentos Especiais",
       memories: [
         {
           id: 1,
-          imageSrc: "https://source.unsplash.com/random/600x900?couple,1",
+          imageSrc: "https://source.unsplash.com/random/600x900?couple,1", // ⬅️ MUDE PARA SUA FOTO REAL
           title: "Nosso Primeiro Encontro",
           date: "Janeiro 2023",
           description: "Aquele dia incrível que mudou nossas vidas para sempre."
@@ -116,14 +136,14 @@ export const siteConfig = {
     }
   ],
   
-  // Videos to display
+  // ADICIONE SEUS VÍDEOS AQUI ⬇️
   videos: [
     {
       id: 1,
-      videoSrc: "https://example.com/videos/nosso-video-1.mp4", // Replace with your video URL
+      videoSrc: "/videos/nosso-video-1.mp4", // ⬅️ MUDE PARA O CAMINHO REAL DO SEU VÍDEO
       title: "Momentos Inesquecíveis",
       description: "Uma compilação dos nossos momentos mais especiais juntos.",
-      poster: "https://source.unsplash.com/random/1280x720?couple,1"
+      poster: "/videos/thumbnail1.jpg" // ⬅️ MUDE PARA O CAMINHO DA IMAGEM DE CAPA DO VÍDEO
     },
     {
       id: 2,

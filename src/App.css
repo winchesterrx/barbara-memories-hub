@@ -1,4 +1,3 @@
-
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -141,58 +140,59 @@
   box-shadow: 0 0 15px rgba(255, 117, 143, 0.5);
 }
 
-/* Backdrop filter for glass effect */
-.backdrop-blur {
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-}
-
-/* Glass card effect */
+/* Enhanced glass effect */
 .glass-card {
   background: rgba(20, 20, 20, 0.4);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: all 0.3s ease;
 }
 
-/* Particle background */
-.particles-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+.glass-card:hover {
+  box-shadow: 0 10px 40px 0 rgba(255, 117, 143, 0.25);
+  border: 1px solid rgba(255, 117, 143, 0.2);
 }
 
-/* Shine effect */
-.shine-effect {
-  position: relative;
-  overflow: hidden;
+/* Music player enhanced styles */
+.music-player {
+  @apply fixed bottom-0 left-0 right-0 z-50 bg-netflix-black bg-opacity-80 border-t border-romantic-pink/30 p-2;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 -4px 20px rgba(255, 117, 143, 0.15);
 }
 
-.shine-effect::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -60%;
-  width: 20%;
-  height: 200%;
-  opacity: 0;
-  background: rgba(255, 255, 255, 0.13);
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.13) 77%,
-    rgba(255, 255, 255, 0.5) 92%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  transform: rotate(30deg);
+/* Improved video container */
+.video-container {
+  @apply relative overflow-hidden rounded-md transition-all duration-300;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.shine-effect:hover::after {
-  opacity: 1;
-  left: 130%;
-  transition: left 0.7s ease-in-out;
+.video-container:hover {
+  box-shadow: 0 8px 30px rgba(255, 117, 143, 0.2);
+}
+
+.video-container iframe, 
+.video-container video {
+  @apply absolute top-0 left-0 w-full h-full;
+}
+
+/* Animated background */
+.bg-animated {
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
