@@ -61,7 +61,7 @@ const ParticlesBackground = ({ type = 'default' }: ParticlesBackgroundProps) => 
             move: {
               enable: true,
               speed: 1.5,
-              direction: "top",
+              direction: "top" as const,
               random: true,
               straight: false,
               out_mode: "out",
@@ -150,7 +150,7 @@ const ParticlesBackground = ({ type = 'default' }: ParticlesBackgroundProps) => 
             move: {
               enable: true,
               speed: 3,
-              direction: "bottom",
+              direction: "bottom" as const,
               random: true,
               straight: false,
               out_mode: "out",
@@ -239,7 +239,7 @@ const ParticlesBackground = ({ type = 'default' }: ParticlesBackgroundProps) => 
             move: {
               enable: true,
               speed: 1,
-              direction: "none",
+              direction: "none" as const,
               random: true,
               straight: false,
               out_mode: "out",
@@ -279,9 +279,9 @@ const ParticlesBackground = ({ type = 'default' }: ParticlesBackgroundProps) => 
           retina_detect: true,
           background: {
             color: "transparent",
-            image: "",
+            image: "url('/romantic-texture.png')",
             position: "50% 50%",
-            repeat: "no-repeat",
+            repeat: "repeat",
             size: "cover"
           }
         };
@@ -295,6 +295,8 @@ const ParticlesBackground = ({ type = 'default' }: ParticlesBackgroundProps) => 
         init={particlesInit}
         options={getOptions()}
       />
+      <div className="fixed inset-0 bg-gradient-to-b from-netflix-black/70 via-netflix-black/40 to-netflix-black/80 -z-9"></div>
+      <div className="fixed inset-0 bg-[url('/romantic-texture.png')] opacity-10 mix-blend-overlay -z-8"></div>
     </div>
   );
 };
