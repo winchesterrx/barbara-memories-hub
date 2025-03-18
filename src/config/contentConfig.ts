@@ -5,7 +5,7 @@ export const siteConfig = {
     title: "Barbara Gianezi",
     subtitle: "Nossa História de Amor",
     quote: "Cada momento ao seu lado é uma página especial na história da minha vida.",
-    backgroundImage: "https://source.unsplash.com/1600x900/?romantic,couple", // ⬅️ MUDE ESTA URL para sua imagem de fundo
+    backgroundImage: "/img/back.jpg", // ⬅️ MUDE ESTA URL para sua imagem de fundo
   },
   
   // Music player - ADICIONE SUAS MÚSICAS AQUI ⬇️
@@ -156,7 +156,7 @@ export const siteConfig = {
   
   // Birthday message
   birthdayMessage: {
-    title: "Feliz Aniversário, Barbara!",
+    title: "Feliz Aniversário, Meu amor!",
     message: "19 de Março, um dia muito especial que trouxe ao mundo a pessoa mais incrível que já conheci. Que nessa nova fase da sua vida seja repleta de conquistas e momentos maravilhosos. Te amo muito!"
   }
 };
