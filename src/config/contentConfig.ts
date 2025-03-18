@@ -5,7 +5,7 @@ export const siteConfig = {
     title: "Barbara Gianezi",
     subtitle: "Nossa História de Amor",
     quote: "Cada momento ao seu lado é uma página especial na história da minha vida.",
-    backgroundImage: "/img/back.jpg", // ⬅️ MUDE ESTA URL para sua imagem de fundo
+    backgroundImage: "https://source.unsplash.com/1600x900/?romantic,couple", // ⬅️ MUDE ESTA URL para sua imagem de fundo
   },
   
   // Music player - ADICIONE SUAS MÚSICAS AQUI ⬇️
@@ -87,7 +87,7 @@ export const siteConfig = {
         },
         {
           id: 5,
-          imageSrc: "https://source.unsplash.com/random/600x900?couple,5",
+          imageSrc: "/img/15.jpg",
           title: "Nosso Aniversário",
           date: "Maio 2023",
           description: "Celebrando cada momento que compartilhamos juntos."
