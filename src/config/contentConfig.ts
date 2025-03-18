@@ -10,7 +10,7 @@ export const siteConfig = {
   
   // Music player - ADICIONE SUAS MÚSICAS AQUI ⬇️
   music: {
-    src: "/logoeu.mp3", // ⬅️ MUDE PARA O CAMINHO REAL DA SUA MÚSICA
+    src: "/music/logoeu.mp3", // ⬅️ MUDE PARA O CAMINHO REAL DA SUA MÚSICA
     title: "Nossa Música",
     artist: "Artista Favorito",
     cover: "/music/cover.jpg", // ⬅️ MUDE PARA O CAMINHO DA IMAGEM DE CAPA DA MÚSICA
