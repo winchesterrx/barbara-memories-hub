@@ -64,7 +64,7 @@ const ParticlesBackground = ({ type = 'default' }: ParticlesBackgroundProps) => 
               direction: "top" as const,
               random: true,
               straight: false,
-              out_mode: "out",
+              out_mode: "out" as const,
               bounce: false,
             }
           },
@@ -153,7 +153,7 @@ const ParticlesBackground = ({ type = 'default' }: ParticlesBackgroundProps) => 
               direction: "bottom" as const,
               random: true,
               straight: false,
-              out_mode: "out",
+              out_mode: "out" as const,
               bounce: false
             }
           },
@@ -242,7 +242,7 @@ const ParticlesBackground = ({ type = 'default' }: ParticlesBackgroundProps) => 
               direction: "none" as const,
               random: true,
               straight: false,
-              out_mode: "out",
+              out_mode: "out" as const,
               bounce: false,
               attract: {
                 enable: false,
