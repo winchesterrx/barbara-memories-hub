@@ -147,12 +147,14 @@ export const siteConfig = {
       poster: "/img/barbara.jpg" // Usando uma imagem do projeto como thumbnail
     },
     {
-      id: 2,
-      videoSrc: "https://example.com/videos/nosso-video-2.mp4", // Replace with your video URL
-      title: "Nossa Viagem",
-      description: "Lembranças maravilhosas da nossa viagem inesquecível.",
-      poster: "https://source.unsplash.com/random/1280x720?couple,2"
-    }
+  id: 1,
+  videoSrc: "https://drive.google.com/uc?export=download&id=1-scCHN0pMJlmt8TXkVdg5s4jOKBQoFe1", // Link direto do Drive
+  title: "Momentos Inesquecíveis",
+  description: "Uma compilação dos nossos momentos mais especiais juntos.",
+  poster: "/img/barbara.jpg", // Usando uma imagem do projeto como thumbnail
+  warning: "AVISO — ESPAÇO RESERVADO PARA FUTURAS VIAGENS" // Mensagem de aviso
+}
+
   ],
   
   // Birthday message
