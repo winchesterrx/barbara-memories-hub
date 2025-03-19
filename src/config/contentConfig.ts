@@ -1,4 +1,3 @@
-
 // Edit this file to customize your content
 export const siteConfig = {
   // Hero Section
@@ -114,24 +113,24 @@ export const siteConfig = {
         },
         {
           id: 8,
-          imageSrc: "https://source.unsplash.com/random/600x900?love,3",
-          title: "Dia na Praia",
-          date: "Agosto 2023",
+          imageSrc: "/img/10.jpg",
+          title: "ahhhhhhhhhh esse dia kk",
+          date: "em alguma data de 2024",
           description: "Sol, mar e muito amor."
         },
         {
           id: 9,
-          imageSrc: "https://source.unsplash.com/random/600x900?love,4",
-          title: "Festa com Amigos",
-          date: "Setembro 2023",
+          imageSrc: "/img/5.jpg",
+          title: "Natal em Familia",
+          date: "24/12/2024",
           description: "Compartilhando momentos especiais com pessoas especiais."
         },
         {
           id: 10,
-          imageSrc: "https://source.unsplash.com/random/600x900?love,5",
+          imageSrc: "/img/cafe.jpg",
           title: "Café da Manhã Especial",
-          date: "Outubro 2023",
-          description: "Pequenos momentos que significam tudo."
+          date: "19/03",
+          description: "Fazer algo para você é tão bom"
         }
       ]
     }
@@ -141,10 +140,10 @@ export const siteConfig = {
   videos: [
     {
       id: 1,
-      videoSrc: "/video/video.mp4", // Local video file from public folder
-      title: "Momentos Especiais",
+      videoSrc: "/video/video.mp4", // ⬅️ MUDE PARA O CAMINHO REAL DO SEU VÍDEO
+      title: "Momentos Inesquecíveis",
       description: "Uma compilação dos nossos momentos mais especiais juntos.",
-      poster: "/img/15.jpg" // Poster image for the video
+      poster: "/videos/thumbnail1.jpg" // ⬅️ MUDE PARA O CAMINHO DA IMAGEM DE CAPA DO VÍDEO
     },
     {
       id: 2,
