@@ -140,7 +140,7 @@ export const siteConfig = {
   videos: [
     {
       id: 1,
-      videoSrc: "/vídeos/video.mp4", // ⬅️ MUDE PARA O CAMINHO REAL DO SEU VÍDEO
+      videoSrc: "/vídeo/video.mp4", // ⬅️ MUDE PARA O CAMINHO REAL DO SEU VÍDEO
       title: "Momentos Inesquecíveis",
       description: "Uma compilação dos nossos momentos mais especiais juntos.",
       poster: "/videos/thumbnail1.jpg" // ⬅️ MUDE PARA O CAMINHO DA IMAGEM DE CAPA DO VÍDEO
