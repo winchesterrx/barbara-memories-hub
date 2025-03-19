@@ -99,21 +99,21 @@ export const siteConfig = {
       memories: [
         {
           id: 6,
-          imageSrc: "https://source.unsplash.com/random/600x900?love,1",
-          title: "Momentos de Diversão",
-          date: "Junho 2023",
-          description: "Risadas que nunca acabam quando estamos juntos."
+          imageSrc: "/img/barbara.jpg",
+          title: "Momentos em que me perco na sua beleza",
+          date: "Você tem os olhos mais lindos que eu ja vi",
+          description: "Te amo! ❤️"
         },
         {
           id: 7,
-          imageSrc: "https://source.unsplash.com/random/600x900?love,2",
-          title: "Passeio no Parque",
-          date: "Julho 2023",
-          description: "Caminhadas, conversas e muitos sorrisos."
+          imageSrc: "/img/rodeio.jpg",
+          title: "Barretão Irullll",
+          date: "24/ago/2024",
+          description: ""
         },
         {
           id: 8,
-          imageSrc: "/img/10.jpg",
+          imageSrc: "/img/viagem.jpg",
           title: "ahhhhhhhhhh esse dia kk",
           date: "em alguma data de 2024",
           description: "Sol, mar e muito amor."
