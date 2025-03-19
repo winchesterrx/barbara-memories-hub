@@ -1,3 +1,4 @@
+
 // Edit this file to customize your content
 export const siteConfig = {
   // Hero Section
@@ -140,10 +141,10 @@ export const siteConfig = {
   videos: [
     {
       id: 1,
-      videoSrc: "/video/video.mp4", // ⬅️ MUDE PARA O CAMINHO REAL DO SEU VÍDEO
+      videoSrc: "https://drive.google.com/uc?export=download&id=1-scCHN0pMJlmt8TXkVdg5s4jOKBQoFe1", // Link convertido do Google Drive
       title: "Momentos Inesquecíveis",
       description: "Uma compilação dos nossos momentos mais especiais juntos.",
-      poster: "/videos/thumbnail1.jpg" // ⬅️ MUDE PARA O CAMINHO DA IMAGEM DE CAPA DO VÍDEO
+      poster: "/img/barbara.jpg" // Usando uma imagem do projeto como thumbnail
     },
     {
       id: 2,
