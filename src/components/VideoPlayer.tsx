@@ -17,24 +17,45 @@ const VideoPlayer = ({ videoSrc, title, description, poster }: VideoPlayerProps)
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [videoUrl, setVideoUrl] = useState('');
   const videoRef = useRef<HTMLVideoElement>(null);
   const isMobile = useIsMobile();
 
-  // Check if URL is from Google Drive and format it correctly
-  const getProperVideoUrl = (url: string) => {
-    if (url.includes('drive.google.com/file/d/')) {
-      // Extract the file ID from the URL
-      const matches = url.match(/\/d\/([^\/]+)/);
-      if (matches && matches[1]) {
-        return `https://drive.google.com/uc?export=download&id=${matches[1]}`;
+  // Process the video URL when component mounts or videoSrc changes
+  useEffect(() => {
+    console.log("Processing video URL:", videoSrc);
+    
+    // Check if URL is from Google Drive
+    if (videoSrc.includes('drive.google.com')) {
+      try {
+        let processedUrl = videoSrc;
+        
+        // Extract Google Drive ID if it's in the sharing URL format
+        if (videoSrc.includes('/file/d/')) {
+          const matches = videoSrc.match(/\/file\/d\/([^\/\?]+)/);
+          if (matches && matches[1]) {
+            processedUrl = `https://drive.google.com/uc?export=download&id=${matches[1]}`;
+          }
+        }
+        
+        console.log("Processed Google Drive URL:", processedUrl);
+        setVideoUrl(processedUrl);
+      } catch (error) {
+        console.error("Error processing Google Drive URL:", error);
+        setHasError(true);
+        toast.error("Erro ao processar o link do vídeo");
       }
+    } else {
+      // Not a Google Drive URL, use as is
+      setVideoUrl(videoSrc);
     }
-    return url;
-  };
-
-  const videoUrl = getProperVideoUrl(videoSrc);
+  }, [videoSrc]);
 
   useEffect(() => {
+    if (!videoUrl) return;
+    
+    console.log("Setting up video with URL:", videoUrl);
+    
     // Add event listeners to track video state
     const videoElement = videoRef.current;
     if (!videoElement) return;
@@ -63,10 +84,10 @@ const VideoPlayer = ({ videoSrc, title, description, poster }: VideoPlayerProps)
     };
 
     const handleError = (e: any) => {
-      console.error("Video error:", e);
+      console.error("Video error:", e, videoElement.error);
       setHasError(true);
       setIsLoading(false);
-      toast.error("Erro ao carregar o vídeo. Verifique a conexão com a internet.");
+      toast.error("Erro ao carregar o vídeo. Tente novamente mais tarde.");
     };
 
     videoElement.addEventListener('canplay', handleCanPlay);
@@ -75,7 +96,7 @@ const VideoPlayer = ({ videoSrc, title, description, poster }: VideoPlayerProps)
     videoElement.addEventListener('playing', handlePlaying);
     videoElement.addEventListener('error', handleError);
     
-    // Attempt to load the video
+    // Reset video element
     videoElement.load();
     
     return () => {
@@ -93,25 +114,30 @@ const VideoPlayer = ({ videoSrc, title, description, poster }: VideoPlayerProps)
       e.stopPropagation();
     }
     
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-        setIsPlaying(false);
-      } else {
-        // Create a play promise to handle autoplay restrictions
-        const playPromise = videoRef.current.play();
-        
-        if (playPromise !== undefined) {
-          playPromise.then(() => {
-            console.log("Video playing successfully");
-            setIsPlaying(true);
-          }).catch(error => {
-            console.error("Error playing video:", error);
-            // If autoplay is prevented, we need to show UI to let the user start playback
-            setIsPlaying(false);
-            toast.error("Não foi possível reproduzir o vídeo automaticamente. Por favor, tente novamente.");
-          });
-        }
+    if (!videoRef.current) return;
+    
+    console.log("Toggle play clicked, current state:", isPlaying);
+    
+    if (isPlaying) {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      // Create a play promise to handle autoplay restrictions
+      const playPromise = videoRef.current.play();
+      
+      if (playPromise !== undefined) {
+        setIsLoading(true);
+        playPromise.then(() => {
+          console.log("Video playing successfully");
+          setIsPlaying(true);
+          setIsLoading(false);
+        }).catch(error => {
+          console.error("Error playing video:", error);
+          // If autoplay is prevented, we need to show UI to let the user start playback
+          setIsPlaying(false);
+          setIsLoading(false);
+          toast.error("Clique no vídeo novamente para reproduzir");
+        });
       }
     }
   };
@@ -142,20 +168,22 @@ const VideoPlayer = ({ videoSrc, title, description, poster }: VideoPlayerProps)
           </div>
         ) : (
           <>
-            <video 
-              ref={videoRef}
-              className="w-full h-full rounded-lg"
-              poster={poster}
-              playsInline
-              preload="metadata"
-              onPlay={() => setIsPlaying(true)}
-              onPause={() => setIsPlaying(false)}
-              onEnded={() => setIsPlaying(false)}
-              crossOrigin="anonymous"
-            >
-              <source src={videoUrl} type="video/mp4" />
-              Seu navegador não suporta vídeos.
-            </video>
+            {videoUrl && (
+              <video 
+                ref={videoRef}
+                className="w-full h-full rounded-lg"
+                poster={poster}
+                playsInline
+                preload="metadata"
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
+                onEnded={() => setIsPlaying(false)}
+                controlsList="nodownload"
+              >
+                <source src={videoUrl} type="video/mp4" />
+                Seu navegador não suporta vídeos.
+              </video>
+            )}
             
             {/* Loading indicator */}
             {isLoading && !hasError && (
@@ -165,7 +193,7 @@ const VideoPlayer = ({ videoSrc, title, description, poster }: VideoPlayerProps)
             )}
             
             {/* Big play button overlay when video is not playing */}
-            {!isPlaying && isLoaded && !isLoading && (
+            {!isPlaying && (isLoaded || !isLoading) && !hasError && (
               <div className="absolute inset-0 flex items-center justify-center bg-black/30">
                 <button 
                   onClick={(e) => togglePlay(e)}

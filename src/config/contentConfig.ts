@@ -141,7 +141,7 @@ export const siteConfig = {
   videos: [
     {
       id: 1,
-      videoSrc: "https://drive.google.com/uc?export=download&id=1-scCHN0pMJlmt8TXkVdg5s4jOKBQoFe1", // Link convertido do Google Drive
+      videoSrc: "https://drive.google.com/uc?export=download&id=1-scCHN0pMJlmt8TXkVdg5s4jOKBQoFe1", // Link direto do Drive
       title: "Momentos Inesquecíveis",
       description: "Uma compilação dos nossos momentos mais especiais juntos.",
       poster: "/img/barbara.jpg" // Usando uma imagem do projeto como thumbnail
