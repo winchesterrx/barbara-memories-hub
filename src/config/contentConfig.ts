@@ -141,10 +141,10 @@ export const siteConfig = {
   videos: [
     {
       id: 1,
-      videoSrc: "/video/video.mp4", // Utilizando o vídeo do projeto
-      title: "Momentos Inesquecíveis",
+      videoSrc: "/video/video.mp4", // Local video file from public folder
+      title: "Momentos Especiais",
       description: "Uma compilação dos nossos momentos mais especiais juntos.",
-      poster: "/img/15.jpg" // Usando uma imagem existente como poster
+      poster: "/img/15.jpg" // Poster image for the video
     },
     {
       id: 2,
