@@ -1,3 +1,4 @@
+
 // Edit this file to customize your content
 export const siteConfig = {
   // Hero Section
@@ -140,10 +141,10 @@ export const siteConfig = {
   videos: [
     {
       id: 1,
-      videoSrc: "/vídeo/video.mp4", // ⬅️ MUDE PARA O CAMINHO REAL DO SEU VÍDEO
+      videoSrc: "/video/video.mp4", // Utilizando o vídeo do projeto
       title: "Momentos Inesquecíveis",
       description: "Uma compilação dos nossos momentos mais especiais juntos.",
-      poster: "/videos/thumbnail1.jpg" // ⬅️ MUDE PARA O CAMINHO DA IMAGEM DE CAPA DO VÍDEO
+      poster: "/img/15.jpg" // Usando uma imagem existente como poster
     },
     {
       id: 2,

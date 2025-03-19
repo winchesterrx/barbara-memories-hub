@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, forwardRef } from 'react';
 import { motion } from 'framer-motion';
 
 interface SectionProps {
@@ -10,8 +10,9 @@ interface SectionProps {
   className?: string;
 }
 
-const Section = ({ title, children, description, id, className }: SectionProps) => {
-  const sectionRef = useRef<HTMLElement>(null);
+const Section = forwardRef<HTMLElement, SectionProps>(({ title, children, description, id, className }, ref) => {
+  const defaultRef = useRef<HTMLElement>(null);
+  const sectionRef = ref || defaultRef;
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,16 +26,17 @@ const Section = ({ title, children, description, id, className }: SectionProps) 
       { threshold: 0.1 }
     );
     
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const currentRef = sectionRef as React.RefObject<HTMLElement>;
+    if (currentRef && currentRef.current) {
+      observer.observe(currentRef.current);
     }
     
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentRef && currentRef.current) {
+        observer.unobserve(currentRef.current);
       }
     };
-  }, []);
+  }, [sectionRef]);
 
   return (
     <motion.section 
@@ -78,6 +80,8 @@ const Section = ({ title, children, description, id, className }: SectionProps) 
       </div>
     </motion.section>
   );
-};
+});
+
+Section.displayName = 'Section';
 
 export default Section;
